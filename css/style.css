@@ -204,11 +204,13 @@ footer {
 }
 
 .projectHead.product {
-  background-color:#87b822;
+  background-color:#27ae60;
 }
 .projectHead .picture {
   margin-bottom:6%;
   margin-top:6%;
+  width:384px;
+  height:384px;
 }
 .projectHead .picture.right {
   margin-right:-3.5%;
