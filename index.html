@@ -30,7 +30,7 @@
                     <li><a id="workBtn" href="#!/" ng-class="{activeSmall:part == 'projects'}" style="font-family: 'Inconsolata', monospace; font-weight:bold" >Projects</a></li>
                     <li><a id="privacyBtn" href="#!/privacy" ng-class="{activeSmall:part == 'privacy'}" style="font-family: 'Inconsolata', monospace; font-weight:bold">About Me</a></li>
                     <li><a id="aboutBtn" href="#!/about" ng-class="{activeSmall:part == 'about'}" style="font-family: 'Inconsolata', monospace; font-weight:bold">Resume</a></li>
-                    <li style="margin-right:0px"><a id="contactBtn" class="active" href="javascript: void(0)" ng-click="showForm()" style="font-family: 'Inconsolata', monospace; font-weight:bold">Get At Me</a></li>
+                    <li style="margin-right:0px"><a id="contactBtn" class="active" href="javascript: void(0)" ng-click="showForm()" style="font-family: 'Inconsolata', monospace; font-weight:bold">Contact Me</a></li>
                 </ul>
             </nav>
         </div>
@@ -39,13 +39,13 @@
     <!-- contact us form -->
     <div class="paddRow contactRow">
         <div class="wrap">
-            <div class="head">Contact Us</div>
+            <div class="head" style="font-family: 'Inconsolata', monospace;">Contact Me</div>
             <img class="close" src="images/close.png" ng-click="closeForm()" />
             <form ng-submit="save()" class="contactForm" name="form" ng-hide="loaded">
-                <input class="input" required="required" type="text" name="name" placeholder="your name" ng-model="message.name" />
-                <input class="input email" required="required" type="email" name="email" value="" placeholder="your email" ng-model="message.email" /><br />
-                <textarea class="textarea" rows="5" required="required" placeholder="your message" ng-model="message.text" ></textarea>
-                <button class="btn green">send message</button>
+                <input class="input" required="required" type="text" name="name" placeholder="your name" ng-model="message.name" style="font-family: 'Inconsolata', monospace;" />
+                <input class="input email" required="required" type="email" name="email" value="" placeholder="your email" ng-model="message.email" style="font-family: 'Inconsolata', monospace;" /><br />
+                <textarea class="textarea" rows="5" required="required" placeholder="your message" ng-model="message.text" style="font-family: 'Inconsolata', monospace;"></textarea>
+                <button class="btn green" style="font-family: 'Inconsolata', monospace;">send message</button>
             </form>
 
             <!-- contact us form response messages -->
