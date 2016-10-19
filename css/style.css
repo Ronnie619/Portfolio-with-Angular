@@ -1,4 +1,5 @@
-﻿
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 /* general settings */
 html {
   min-height:100%;
@@ -88,6 +89,7 @@ header .wrap {
 }
 header .logo {
   margin-top:1px;
+  display:none;
 }
 header nav {
   float:right;
@@ -129,6 +131,7 @@ footer {
 /* other objects */
 .projectObj {
   color:#fff;
+  line-height: 160px;
   display:block;
 }
 .projectObj .name {
@@ -136,13 +139,15 @@ footer {
   font-size:4em;
   font-weight:100;
   position:absolute;
+  font-family: 'Inconsolata', monospace;
   width:42%;
 }
 .projectObj .img {
   float:right;
   margin-bottom:5%;
   margin-top:5%;
-  width:30%;
+  width:384px;
+  height:384px;
 }
 
 .paddRow {

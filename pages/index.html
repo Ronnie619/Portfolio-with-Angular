@@ -1,80 +1,80 @@
 <div style="width:100%">
-    <a class="projectObj" href="#!/project/product1" style="background-color:#87b822">
+    <a class="projectObj" href="#!/project/product1" style="background-color:#2980b9">
         <div class="wrap">
-            <div class="name">Project #1</div>
-            <img class="img" src="images/element.png" />
+            <div class="name">TouchScreen Kiosk</div>
+            <img class="img" src="images/smartphone.png" />
         </div>
     </a>
-    <a class="projectObj" href="#!/project/product2" style="background-color:#3f91d2">
+    <a class="projectObj" href="#!/project/product2" style="background-color:#27ae60">
         <div class="wrap">
-            <div class="name">Project #2</div>
-            <img class="img" src="images/element.png" />
+            <div class="name" style="vertical-align:central">Web Crawler</div>
+            <img class="img" src="images/processor.png" />
         </div>
     </a>
-    <a class="projectObj" href="#!/project/product3" style="background-color:#f1784d">
+    <a class="projectObj" href="#!/project/product3" style="background-color:#e67e22">
         <div class="wrap">
-            <div class="name">Project #3</div>
-            <img class="img" src="images/element.png" />
+            <div class="name">Portfolio Site</div>
+            <img class="img" src="images/mouse.png" />
         </div>
     </a>
-    <a class="projectObj" href="#!/project/product4" style="background-color:#f0c42c">
+    <a class="projectObj" href="#!/project/product4" style="background-color:#8e44ad">
         <div class="wrap">
-            <div class="name">Project #4</div>
-            <img class="img" src="images/element.png" />
+            <div class="name">GiantBomb Parser</div>
+            <img class="img" src="images/keyboard.png" />
         </div>
     </a>
 </div>
 
 <script>
-$('.projectObj').bind('click', function (e) {
-    e.preventDefault();
+    $('.projectObj').bind('click', function (e) {
+        e.preventDefault();
 
-    var me = this;
-    var width = $(me).width() / 1.5;
-    $(me).find('.wrap').width($(me).find('.wrap').width());
+        var me = this;
+        var width = $(me).width() / 1.5;
+        $(me).find('.wrap').width($(me).find('.wrap').width());
 
-    $(me).animate({
-        opacity: 0,
-        marginLeft: -width
-    }, 500);
+        $(me).animate({
+            opacity: 0,
+            marginLeft: -width
+        }, 500);
 
-    var delayN = 150;
-    var delayP = 150;
+        var delayN = 150;
+        var delayP = 150;
 
-    var nextEl = $(me).nextAll('.projectObj');
-    var prevEl = $(me).prevAll('.projectObj');
+        var nextEl = $(me).nextAll('.projectObj');
+        var prevEl = $(me).prevAll('.projectObj');
 
-    nextEl.each(function (index, elem) {
+        nextEl.each(function (index, elem) {
+            setTimeout(function () {
+
+                $(elem).find('.wrap').width($(elem).find('.wrap').width());
+
+                $(elem).animate({
+                    opacity: 0,
+                    marginLeft: -width
+                }, 500, function () {
+                });
+            }, delayN);
+            delayN += 100;
+        });
+
+        prevEl.each(function (index, elem) {
+            setTimeout(function () {
+                $(elem).find('.wrap').width($(elem).find('.wrap').width());
+
+                $(elem).animate({
+                    opacity: 0,
+                    marginLeft: -width
+                }, 500, function () {
+                });
+            }, delayP);
+            delayP += 100;
+        });
+
         setTimeout(function () {
-            
-            $(elem).find('.wrap').width($(elem).find('.wrap').width());
+            document.location = $(me).attr('href');
+        }, 1000)
 
-            $(elem).animate({
-                opacity: 0,
-                marginLeft: -width
-              }, 500, function () {
-            });
-        }, delayN);
-        delayN += 100;
+        return false;
     });
-
-    prevEl.each(function (index, elem) {
-        setTimeout(function () {
-            $(elem).find('.wrap').width($(elem).find('.wrap').width());
-
-            $(elem).animate({
-                opacity: 0,
-                marginLeft: -width
-              }, 500, function () {
-            });
-        }, delayP);
-        delayP += 100;
-    });
-
-    setTimeout(function () {
-        document.location = $(me).attr('href');
-    },1000)
-
-    return false;
-});
 </script>
